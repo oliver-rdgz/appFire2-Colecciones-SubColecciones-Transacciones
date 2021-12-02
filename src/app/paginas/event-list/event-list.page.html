@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="/home2"></ion-back-button>
+        </ion-buttons>
+    <ion-title>lista de eventos</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+ <ion-list>
+  <ion-list-header> <ion-label>Tus proximos eventos</ion-label></ion-list-header>
+
+  <ion-item tappable *ngFor="let event of eventList" routerLink="/event-detail/{{event.id}}">
+   <ion-label> 
+        <h3>{{event?.name}}</h3>
+        <p> Ticket:<strong> {{ event?.price}}</strong></p>
+        <p> Date:<strong> {{ event?.date}} </strong></p>
+  </ion-label> 
+  </ion-item> 
+
+ </ion-list>
+</ion-content>

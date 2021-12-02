@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ currentEvent?.name}} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-card> 
+      <ion-card-header>
+        ingresos del evento:
+        <span [class.rentable]="currentEvent?.revenue > 0" 
+          [class.no-rentable]="currentEvent?.revenue < 0" >
+          {{currentEvent?.revenue | currency }}
+         </span>
+      </ion-card-header>
+      <ion-card-content>
+        <h3>información del evento</h3>
+          <p> Ticket: <strong> {{ currentEvent?.price }}</strong></p>
+          <p> Fecha: <strong> {{ currentEvent?.date }}</strong></p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class=".agregar_invitado_formulario">
+        <ion-card-header>
+          <h3> Agregar invitado</h3> 
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+              <ion-label position="stacked"> Nombre: </ion-label>
+              <ion-input [(ngModel)]="nombre_invitado" type="text" aria-placeholder="Cual es el nombre del invitado?"> </ion-input>
+            </ion-item>
+            <ion-button color="primary" (click)="agregar_invitado(nombre_invitado)" [disable]="!nombre_invitado">Agregar invitado </ion-button>
+          </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <p> Ticket: <strong> {{ currentEvent?.price }}</strong></p>
+        <p> Fecha: <strong> {{ currentEvent?.date }}</strong></p>
+      </ion-card-content>
+    </ion-card>
+   </ion-content>
+

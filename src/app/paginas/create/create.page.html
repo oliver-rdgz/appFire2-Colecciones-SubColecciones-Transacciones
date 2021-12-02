@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>create</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="createSongForm" (submit)="crearCancion()">
+<ion-item>
+   <ion-label stacked> Nombre de la canción: </ion-label>
+   <ion-input formControlName="songName" type="text" aria-placeholder="Como se llama la canción? "></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label stacked>Nombre del artista: </ion-label>
+  <ion-input formControlName="artistName" type="text" aria-placeholder=" Quien es el autor de la canción? "></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label stacked> Nombre del Album: </ion-label>
+  <ion-input formControlName="albumName" type="text" aria-placeholder="Cual es el nombre del album? "> </ion-input>
+</ion-item>
+<ion-item>
+  <ion-label stacked>Descripción de la Canción:  </ion-label>
+  <ion-input formControlName="songDescription" type="text" aria-placeholder=" Que se dice sobre esta canciòn? "></ion-input>
+</ion-item>
+<ion-button expand="block" type="submit" [disable]=" " > Agregar Canción </ion-button>
+  </form>
+
+</ion-content>
